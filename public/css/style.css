@@ -109,3 +109,258 @@ body {
     height: 400px;
     width: 80vh;
 }
+
+
+/* ===== WanderLust Responsive Design ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* Property Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 1rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.listing-card .card-img-top {
+    width: 100%;
+    height: 250px !important;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.listing-card .card-body {
+    padding: 0.75rem 0;
+}
+
+.listing-card .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Category Filters */
+#filters {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    scrollbar-width: thin;
+}
+
+.filter {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.filter p {
+    white-space: nowrap;
+}
+
+/* Tax Toggle */
+.tax-toggle {
+    margin-left: auto !important;
+    flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .listing-card .card-img-top {
+        height: 220px !important;
+    }
+
+    #filters {
+        gap: 1rem;
+    }
+
+    .tax-toggle {
+        margin-left: 0 !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .listing-card .card-img-top {
+        height: 230px !important;
+    }
+
+    .listing-card .card-body {
+        padding: 0.5rem 0.25rem;
+    }
+
+    #filters {
+        gap: 1.25rem;
+        padding: 0.5rem 0;
+    }
+
+    .filter p {
+        font-size: 0.75rem;
+    }
+
+    .tax-toggle {
+        padding: 0.75rem !important;
+        height: auto !important;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* ===== Responsive WanderLust Login Page ===== */
+
+.login-container {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.login-container h3 {
+    color: #222222;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.login-container .form-control {
+    width: 100%;
+    min-height: 45px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.login-container .form-control:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.12);
+}
+
+.login-btn {
+    background-color: #fe424d;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background-color: #e63946;
+    color: #ffffff;
+}
+
+.signup-link {
+    color: #fe424d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+    .login-container {
+        padding: 1.5rem 1rem;
+        border-radius: 14px;
+    }
+
+    .login-container h3 {
+        font-size: 1.35rem;
+    }
+}
+
+/* ===== WanderLust Welcome Popup ===== */
+
+.welcome-modal {
+    border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.welcome-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background-color: white;
+    padding: 12px;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.welcome-image {
+    background: linear-gradient(180deg, #ffd5e5, #fff2f7);
+    padding: 24px;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.welcome-content {
+    background: white;
+    padding: 25px 30px 35px;
+}
+
+.welcome-content h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 14px;
+}
+
+.welcome-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.welcome-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #ff385c, #e60073);
+    color: white;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+    border: none;
+}
+
+.welcome-btn:hover {
+    background: #e6005c;
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .welcome-modal {
+        margin: 0 10px;
+    }
+
+    .welcome-image img {
+        height: 170px;
+    }
+
+    .welcome-content {
+        padding: 20px;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.35rem;
+    }
+}

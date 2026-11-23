@@ -1,12 +1,78 @@
 
 <style>
-    
+/* ===== WanderLust Responsive Navbar ===== */
 
-.search-btn {
+.wander-navbar {
+    background-color: #ffffff !important;
+    padding: 0.65rem 0;
+    min-height: 75px;
+    height: auto !important;
+    z-index: 1030;
+}
+
+.wander-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.wander-navbar .fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.wander-navbar .navbar-toggler {
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.7rem;
+    box-shadow: none;
+}
+
+.wander-navbar .navbar-collapse {
+    min-width: 0;
+}
+
+.wander-navbar .nav-link {
+    color: #222 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.6rem 0.75rem;
+}
+
+.wander-navbar .nav-link:hover {
+    color: #fe424d !important;
+}
+
+.wander-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.wander-search .search-inp {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+.wander-search .search-inp:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 0.15rem rgba(254, 66, 77, 0.12);
+}
+
+.wander-search .search-btn {
     background-color: #fe424d;
     color: #fff;
-    border-radius: 25px;
-    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 30px;
+    padding: 0.65rem 1.1rem;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
@@ -14,30 +80,74 @@
     gap: 0.5rem;
 }
 
-.search-btn:hover {
-    background-color: #fe424d;
-    color: #fff;
+.wander-search .search-btn:hover {
+    background-color: #e63946;
+    color: white;
 }
 
-.search-btni {
-    display: inline;
+.wander-navbar .navbar-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-    font-size: 0.8rem;
+/* Tablet and mobile */
+@media (max-width: 1199.98px) {
+    .wander-navbar .navbar-collapse {
+        padding-top: 1rem;
+    }
+
+    .wander-navbar .navbar-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 0 !important;
+        margin-top: 0.75rem;
+        border-top: 1px solid #eee;
+        padding-top: 0.75rem;
+    }
+
+    .wander-navbar .navbar-actions .nav-link {
+        padding: 0.65rem 0.25rem;
+    }
+
+    .wander-search {
+        max-width: 100%;
+        margin: 0.75rem 0;
+    }
 }
 
+/* Small mobile */
+@media (max-width: 575.98px) {
+    .wander-navbar {
+        min-height: 65px;
+        padding: 0.5rem 0;
+    }
 
+    .wander-navbar .fa-compass {
+        font-size: 1.8rem;
+    }
+
+    .wander-search .search-inp {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.85rem;
+    }
+
+    .wander-search .search-btn {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.85rem;
+    }
+}
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-xl wander-navbar border-bottom sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/listings">
-    <i class="fa-regular fa-compass"></i>
-</a>
 
+        <!-- Logo -->
+        <a class="navbar-brand" href="/listings" aria-label="WanderLust Home">
+            <i class="fa-regular fa-compass"></i>
+        </a>
+
+        <!-- Mobile Menu Button -->
         <button
             class="navbar-toggler"
             type="button"
@@ -49,42 +159,43 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Collapsible Navbar -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+            <!-- Explore -->
             <div class="navbar-nav">
                 <a class="nav-link" href="/listings">Explore</a>
-             
             </div>
-           
-<div class="navbar-nav ms-auto">
-    <form class="d-flex" role="search">
-        <input
-            class="form-control me-2 search-inp"
-            type="search"
-            placeholder="Search destination"
-          
-        />
-        
-<button class="btn search-btn" type="submit">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    Search
-</button>
 
-    </form>
-</div>
- 
+            <!-- Search -->
+            <form class="wander-search" role="search" onsubmit="return false;">
+                <input
+                    class="form-control search-inp"
+                    type="search"
+                    name="search"
+                    placeholder="Search destination"
+                    aria-label="Search destination"
+                />
 
-<div class="navbar-nav ms-auto">
-       <a class="nav-link" href="/listings/new">Airbnb your Home</a>
-    <% if (!currUser) { %>
-        <a class="nav-link" href="/signup">Sign up</a>
-        <a class="nav-link" href="/login">Log in</a>
-    <% } %>
+                <button class="btn search-btn" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </button>
+            </form>
 
-    <% if (currUser) { %>
-        <a class="nav-link" href="/logout">Log out</a>
-    <% } %>
-</div>
+            <!-- Account Links -->
+            <div class="navbar-nav navbar-actions ms-auto">
+                <a class="nav-link" href="/listings/new">Airbnb your Home</a>
 
+                <% if (!currUser) { %>
+                    <a class="nav-link" href="/signup">Sign up</a>
+                    <a class="nav-link" href="/login">Log in</a>
+                <% } %>
+
+                <% if (currUser) { %>
+                    <a class="nav-link" href="/logout">Log out</a>
+                <% } %>
+            </div>
 
         </div>
     </div>
