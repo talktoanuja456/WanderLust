@@ -364,3 +364,154 @@ html, body {
         font-size: 1.35rem;
     }
 }
+
+/* Listing Details Responsive */
+
+.show-page .show-card {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.show-page .show-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.show-page .show-card-body {
+    padding: 1.5rem 0.25rem;
+}
+
+.show-page .show-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.show-page .show-action-btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.show-page .review-card {
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+}
+
+.show-page #map {
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .show-page .show-img {
+        height: 340px;
+    }
+}
+
+@media (max-width: 576px) {
+    .show-page .show-img {
+        height: 240px;
+    }
+
+    .show-page .show-card-body {
+        padding: 1rem 0.1rem;
+    }
+
+    .show-page #map {
+        height: 280px;
+    }
+}
+
+/* Smaller Property Image - WanderLust */
+
+.show-page .show-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .show-page .show-img {
+        height: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .show-page .show-img {
+        height: 180px;
+    }
+}
+
+/* ===== Compact Listing Details Layout ===== */
+
+/* Make property details narrower and centered */
+.show-page > .row > .col-lg-10 {
+    width: 60%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Property image */
+.show-page .show-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Property card */
+.show-page .show-card {
+    width: 100%;
+    border: none;
+}
+
+/* Map */
+.show-page #map {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .show-page > .row > .col-lg-10 {
+        width: 80%;
+        max-width: 720px;
+    }
+
+    .show-page .show-img {
+        height: 200px;
+    }
+
+    .show-page #map {
+        height: 280px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .show-page > .row > .col-lg-10 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .show-page .show-img {
+        height: 180px;
+    }
+
+    .show-page #map {
+        height: 250px;
+    }
+}
