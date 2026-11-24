@@ -515,3 +515,75 @@ html, body {
         height: 250px;
     }
 }
+/* ===== Review Cards ===== */
+
+.show-page .review-card {
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 16px !important;
+    background-color: #ffffff;
+    padding: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.show-page .review-card:hover {
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.09);
+}
+
+.show-page .review-card .card-body {
+    padding: 20px !important;
+}
+
+.review-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 10px;
+}
+
+.review-card .card-text {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.review-card .starability-result {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.review-card .btn-outline-danger {
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+}
+
+/* Review Profile Avatar */
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffe8ea;
+    color: #fe424d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.review-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-profile .card-title {
+    margin: 0;
+}

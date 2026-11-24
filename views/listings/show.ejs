@@ -47,7 +47,7 @@
             </div>
 
             <!-- Owner Buttons -->
-            <% if (currUser && listing.owner._id.equals(currUser._id)) { %>
+       <% if (currUser && currUser.role === "admin") { %>
                 <div class="show-actions mt-3 mb-4">
 
                     <a
@@ -94,17 +94,17 @@
 
                     <fieldset class="starability-slot">
                         <input
-                            type="radio"
-                            id="no-rate"
-                            class="input-no-rate"
-                            name="review[rating]"
-                            value="0"
-                            checked
-                            aria-label="No rating"
-                        />
-
+    type="radio"
+    id="no-rate"
+    class="input-no-rate"
+    name="review[rating]"
+    value=""
+    checked
+    disabled
+    aria-label="No rating"
+/>
                         <input type="radio" id="rate1"
-                            name="review[rating]" value="1" />
+                           name="review[rating]" value="1" required />
                         <label for="rate1" title="Terrible">1 star</label>
 
                         <input type="radio" id="rate2"
@@ -162,9 +162,15 @@
                             <div class="card review-card h-100">
                                 <div class="card-body">
 
-                                    <h5 class="card-title">
-                                        @<%= review.author.username %>
-                                    </h5>
+                                   <div class="review-profile">
+    <div class="review-avatar">
+        <%= review.author.username.charAt(0).toUpperCase() %>
+    </div>
+
+    <h5 class="card-title">
+        <%= review.author.username %>
+    </h5>
+</div>
 
                                     <p
                                         class="starability-result"

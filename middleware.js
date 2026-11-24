@@ -65,3 +65,12 @@ module.exports.isReviewAuthor = async (req, res, next) => {
 
     next();
 };
+
+module.exports.isAdmin = (req, res, next) => {
+    if (!req.isAuthenticated() || req.user.role !== "admin") {
+        req.flash("error", "Only admins can manage property listings!");
+        return res.redirect("/listings");
+    }
+
+    next();
+};

@@ -185,7 +185,9 @@
 
             <!-- Account Links -->
             <div class="navbar-nav navbar-actions ms-auto">
-                <a class="nav-link" href="/listings/new">Airbnb your Home</a>
+                <% if (currUser && currUser.role === "admin") { %>
+    <a class="nav-link" href="/listings/new">Add New Listing</a>
+<% } %>
 
                 <% if (!currUser) { %>
                     <a class="nav-link" href="/signup">Sign up</a>
